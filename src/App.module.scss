@@ -1,0 +1,71 @@
+/* Your styles goes here. */
+body{
+  background-color: black;
+}
+.overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transition: ease-in-out 1s;
+
+}
+
+.overlayHide{
+opacity: 0;
+}
+
+.body{
+  display: flex;
+  flex-direction: column;
+}
+.video{
+  z-index: -1;
+ opacity: 30%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+.block2{
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+}
+.text{
+  color: white;
+
+}
+
+
+
+
+
+
+
+
+
+
+.card{
+  width: 600px;
+  height: 600px;
+  background-color: black;
+ opacity: 50%;
+  border-radius: 20px;
+  padding: 10px;
+  animation: ease-in-out 0,4ms;
+}
+
+.card:hover{
+
+opacity: 100%;
+  scale: 110%;
+  transition:4ms ease-in-out ;
+}
+

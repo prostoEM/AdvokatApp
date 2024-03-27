@@ -1,0 +1,83 @@
+
+$ani-speed: 3s;
+$ani-delay: 2s;
+
+.block{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.logo{
+  width: 700px;
+}
+
+
+.title{
+  z-index: 1000;
+  font-size: 50px;
+  color:white;
+  opacity: 100%;
+}
+
+.arrowPage{
+  position: relative;
+  height: 300px;
+}
+
+
+.arrow {
+  opacity: 20%;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform-origin: 50% 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.arrowFirst {
+  animation: arrow-movement $ani-speed ease-in-out infinite;
+}
+.arrowSecond {
+  animation: arrow-movement $ani-speed $ani-delay ease-in-out infinite;
+}
+
+.arrow:before,
+.arrow:after {
+  background: #fff;
+  content: '';
+  display: block;
+  height: 8px;
+  position: absolute;
+  top: 300px;
+  left: 0;
+  width: 100px;
+}
+
+.arrow:before {
+  transform: rotate(45deg) translateX(-23%);
+  transform-origin: top left;
+}
+
+.arrow:after {
+  transform: rotate(-45deg) translateX(23%);
+  transform-origin: top right;
+}
+
+
+
+// Animation
+@keyframes arrow-movement {
+  0% {
+    opacity: 0;
+    top: 45%;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

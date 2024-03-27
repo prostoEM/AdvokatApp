@@ -1,35 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import cn from './App.module.scss';
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+import video from './assets/video.mp4'
+
+import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+
+import classNames from "classnames";
+
+
+import  {useState} from "react";
+import {PageOne} from "./components/PageOne/PageOne";
+import {PageTwo} from "./components/PageTwo/PageTwo";
+import { PageTree } from './components/PageTree/PageTree';
+import {PageFour} from "./components/PageFour/PageFour.tsx";
+
+export function App() {
+
+
+const [isVideoPlay, onChangeVideoPlay] = useState(false)
+
+    return (
+      <div
+
+          className={cn.body}>
+          <div className={ classNames(cn.overlay,isVideoPlay&& cn.overlayHide)}>
+
+          </div>
+          <video onCanPlay={()=>onChangeVideoPlay(true)} loop autoPlay muted className={cn.video}>
+              <source src={video} type="video/mp4"/>
+          </video>
+
+          <Parallax pages={4}>
+              <ParallaxLayer sticky={{start: 0, end: 1}}>
+
+                <PageOne />
+
+              </ParallaxLayer>
+
+              <ParallaxLayer sticky={{start: 1, end: 1}}>
+                  <PageTwo />
+
+              </ParallaxLayer>
+            <ParallaxLayer sticky={{start: 2, end:2 }}>
+              <PageTree/>
+
+            </ParallaxLayer>
+            {/*<ParallaxLayer sticky={{start: 0, end:1 }}>*/}
+            {/*  <PageFour />*/}
+
+            {/*</ParallaxLayer>*/}
+          </Parallax>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  );
 }
 
-export default App
+export default App;

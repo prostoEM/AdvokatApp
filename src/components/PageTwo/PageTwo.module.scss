@@ -1,0 +1,65 @@
+.block {
+
+background-color: white;
+  height: 1200px;
+  padding: 100px 30px;
+}
+
+.title {
+  text-align: center;
+  margin: auto;
+  font-size: 60px;
+}
+
+.cards {
+  display: grid;
+  width:650px;
+
+  grid-template-columns: 300px 300px;
+  gap: 50px 150px;
+  justify-content: center;
+  position: relative;
+  margin: 100px auto;
+  .card{
+  z-index: 1;
+    background-color: rgb(246, 246, 246);
+    border-radius: 20px;
+    padding: 20px;
+    width: 100%;
+    margin: auto;
+    height: 100px;
+
+    transition: ease-in-out 0.5s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ &:hover{
+   z-index: 10;
+   scale: 1.1;
+   -webkit-box-shadow: -14px -9px 10px 6px rgba(34, 60, 80, 0.2);
+   -moz-box-shadow: -14px -9px 10px 6px rgba(34, 60, 80, 0.2);
+   box-shadow: -14px -9px 10px 6px rgba(34, 60, 80, 0.2);
+ }
+  }
+}
+
+  .femida{
+    position: absolute;
+    right: -500px;
+    top:100px;
+    width: 500px;
+    object-fit: cover;
+    z-index: 2;
+  }
+
+.cycle{
+  position: absolute;
+  right: -704px;
+  top: 100px;
+  z-index: 0;
+    width: 700px;
+    height: 700px;
+  background: black;
+  border-radius: 50%;
+}
